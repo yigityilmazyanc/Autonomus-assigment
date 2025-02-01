@@ -52,5 +52,4 @@ int:                                      -2147483648                        214
 ...
 ```
 
-The actual output will depend on the system architecture and compiler implementation.
 
