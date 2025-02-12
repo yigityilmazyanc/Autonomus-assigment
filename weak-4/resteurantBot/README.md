@@ -11,6 +11,8 @@ This project is a C++ implementation of a menu management system. It allows user
 - Build Instructions
 - Usage
 - Example Output
+- General Coding Practices
+- Report on Class Relations
 - Future Improvements
 - Contact
 
@@ -40,8 +42,9 @@ This project utilizes several key OOP concepts:
 - `Basket` contains `std::shared_ptr<MenuItem>`, meaning the same `MenuItem` can be shared across multiple baskets without direct ownership.
 
 ## File Structure
+The project is divided into three main files:
 ```
-├── main.cpp         # Entry point of the program
+├── main.cpp         # Entry point of the program, all operations are handled here
 ├── Menu.hpp         # Header file for the Menu class
 ├── Menu.cpp         # Implementation file for the Menu class
 ├── menu.json        # JSON file containing menu data
@@ -104,6 +107,24 @@ Main Courses:
 2. Chicken Alfredo - $15
 ...
 ```
+
+## General Coding Practices
+- **Consistent Coding Style:** Follow a uniform naming and formatting convention.
+- **Descriptive Variable Names:** Use meaningful variable names that reflect their purpose.
+- **Consistent Indentation:** Maintain clear and structured indentation.
+- **Modularization:** Organize code into functions and classes for better readability and maintainability.
+- **Comments:** Provide clear and concise comments to explain complex logic.
+- **Error Handling and Input Validation:** Implement proper error handling and validation to prevent unexpected crashes.
+
+## Report on Class Relations
+In object-oriented programming, four primary relationships exist: inheritance, association, composition, and aggregation. This project incorporates them as follows:
+
+- **Inheritance:** `MenuItem` is the base class, and all specific food types (Starter, Salad, MainCourse, etc.) inherit from it.
+- **Association:** The `User` class has an association with `Menu` and `Basket`, as it interacts with them but does not own them.
+- **Composition:** `Menu` is composed of multiple `MenuItem` instances, meaning that `Menu` owns and manages their lifecycle.
+- **Aggregation:** `Basket` holds `MenuItem` objects using `std::shared_ptr`, meaning that the items exist independently of the basket and can be shared among multiple baskets.
+
+This design ensures proper object-oriented structuring, modularity, and reusability.
 
 ## Future Improvements
 - Implement user interaction for selecting menu items.
